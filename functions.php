@@ -5,7 +5,7 @@
 */
 
 if(WP_ENV==='local') {
-	require_once('classes/FirePHP.class.php');
+	require_once('classes/ChromePhp.php');
 	ob_start();
 }
 require_once('classes/deathstar.php'); // Class for setting up environment: custom post types, featured images, etc

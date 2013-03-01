@@ -11,12 +11,12 @@
  * 
  */
 class DeathStar {
-	
+
 	/**
 	 * init() Initialisation method which calls all other methods in turn.
 	 *
 	 */
-	function init() {		
+	function init() {
 		$theme = new DeathStar;
 		$theme->environment();
 		do_action( 'framework_init' );
@@ -26,16 +26,10 @@ class DeathStar {
 	 * enviroment() defines DeathStar directory constants
 	 *
 	 */
-	function environment() {	
-		define( 'CSS', get_bloginfo('template_directory') . '/assets/css', true );
-		define( 'IMAGES', get_bloginfo('template_directory') . '/assets/img', true );
-		define( 'JS', get_bloginfo('template_directory') . '/assets/js', true );
-		
-		// URI shortcuts
-		define( 'THEME', get_bloginfo( 'template_url' ), true );
-		
+	function environment() {
+
 		do_action( 'environment' ); // Available action: load_environment
-		
+
 		// Register our custom menus
 		if ( function_exists('register_nav_menus') )
 		{
@@ -71,4 +65,3 @@ class DeathStar {
 	}
 
 }
-?>
