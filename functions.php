@@ -174,6 +174,16 @@ function ds_excerpt_more($more) {
 	return '...';
 }
 
+// Add custom css classes to the body tag
+function ds_body_class( $classes ) {
+	// if displaying a page template, add the post_name
+	if( is_page() ) {
+		global $post;
+		$classes[] = $post->post_name;
+	}
+	return $classes;
+}
+
 /**
  * ds_is_login_page function.
  * Quick function to detect if we're on the login or register page.
@@ -199,4 +209,8 @@ add_filter( 'show_admin_bar', 'ds_show_admin_bar' );
 
 // Modify the default expert more symbol
 add_filter('excerpt_more', 'ds_excerpt_more');
+
+// Modify the default expert more symbol
+add_filter('body_class', 'ds_body_class');
+
 ?>
